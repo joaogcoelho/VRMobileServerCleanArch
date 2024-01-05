@@ -24,14 +24,6 @@ public class DatabaseProperties {
         return "org.postgresql.Driver";
     }
 
-    public int getPortaBanco() {
-        return portaBanco;
-    }
-
-    public String getNomeBanco() {
-        return nomeBanco;
-    }
-
     public String getUsuario() {
         return usuario;
     }

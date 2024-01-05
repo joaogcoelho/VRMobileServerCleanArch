@@ -1,9 +1,9 @@
 package br.com.vrsoft.vrmobile.application.usecases;
 
 import br.com.vrsoft.vrmobile.application.gateways.ProdutoGateway;
+import br.com.vrsoft.vrmobile.domain.entity.Either;
 import br.com.vrsoft.vrmobile.domain.entity.Produto;
 import br.com.vrsoft.vrmobile.domain.entity.VRException;
-import io.vavr.control.Either;
 
 import java.util.List;
 
@@ -14,11 +14,11 @@ public class GetProdutosInteractor {
         this.produtoGateway = produtoGateway;
     }
 
-    public Either<VRException, List<Produto>> getProdutos() {
+    public List<Produto> getProdutos() throws Exception {
         try {
-            return Either.right(produtoGateway.getProdutos());
+            return produtoGateway.getProdutos();
         } catch (Exception exception) {
-            return Either.left(new VRException("Não foi possível buscar produtos."));
+            throw new VRException("Ocorreu um erro ao buscar produtos para sincronização.");
         }
     }
 }

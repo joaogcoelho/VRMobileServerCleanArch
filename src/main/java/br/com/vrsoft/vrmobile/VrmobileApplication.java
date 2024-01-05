@@ -24,6 +24,7 @@ public class VrmobileApplication {
 			builder.properties(Collections.singletonMap("server.port", 9010));
 
 			context = builder.run(args);
+			
 			System.out.println("IP: " + InetAddress.getLocalHost().getHostAddress());
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
